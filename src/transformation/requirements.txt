@@ -1,0 +1,4 @@
+duckdb
+boto3
+httpfs
+fsspec
