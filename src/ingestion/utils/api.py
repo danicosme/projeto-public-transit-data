@@ -1,7 +1,7 @@
 import requests
 import json
 
-from utils.logger import LoggingService
+from logger import LoggingService
 
 class ApiService:
     def __init__(self, url):

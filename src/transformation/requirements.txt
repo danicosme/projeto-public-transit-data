@@ -2,3 +2,4 @@ duckdb
 boto3
 httpfs
 fsspec
+pyarrow

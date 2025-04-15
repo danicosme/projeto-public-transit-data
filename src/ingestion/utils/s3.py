@@ -1,6 +1,6 @@
 import boto3
 
-from utils.logger import LoggingService
+from logger import LoggingService
 
 s3_client = boto3.client('s3')
 

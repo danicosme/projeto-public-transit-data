@@ -1,7 +1,7 @@
 import requests
 from zipfile import ZipFile
 
-from utils.logger import LoggingService
+from logger import LoggingService
 
 class FileService:
     def __init__(self, url):
