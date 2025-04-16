@@ -1,4 +1,4 @@
-SELECT 
+SELECT DISTINCT
     agency_id::INT                    AS id_agencia,
     agency_name::VARCHAR              AS nome_agencia,
     agency_url::VARCHAR               AS url_agencia,

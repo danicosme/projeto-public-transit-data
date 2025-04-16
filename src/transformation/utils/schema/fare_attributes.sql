@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
     fare_id::VARCHAR             AS id_tarifa,
     price::DOUBLE                AS preco,
     currency_type::VARCHAR       AS tipo_moeda,

@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
     service_id::VARCHAR          AS id_servico,
     monday::INT                  AS segunda,
     tuesday::INT                 AS terca,

@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
     route_id::VARCHAR            AS id_linha,
     service_id::VARCHAR          AS id_servico,
     trip_id::VARCHAR             AS id_viagem,

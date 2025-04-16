@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
     stop_id::VARCHAR             AS id_ponto,
     stop_name::VARCHAR           AS nome_ponto,
     stop_desc::VARCHAR           AS descricao_ponto,

@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
     route_id::VARCHAR            AS id_linha,
     agency_id::VARCHAR           AS id_agencia,
     route_short_name::VARCHAR    AS nome_curto_linha,

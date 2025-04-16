@@ -1,5 +1,4 @@
-duckdb
-boto3
-httpfs
-fsspec
-pyarrow
+duckdb==0.8.1
+boto3==1.28.20
+pyarrow==13.0.0
+python-dotenv==1.0.0

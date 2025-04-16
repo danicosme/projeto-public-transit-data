@@ -3,10 +3,8 @@ import duckdb
 from utils.logger import LoggingService
 
 class SqlService:
-    def __init__(self, query: str = None):
-        self.logger = LoggingService(name="DuckDbService").logger
-        self.connection_string = duckdb.connect()
-        self.query = query
+    def __init__(self):
+        self.logger = LoggingService(name="SqlService").logger
     
     def format_query(self, sql_path, **kwargs):
         with open(sql_path, "r") as sql_file:
@@ -14,6 +12,12 @@ class SqlService:
         return query
 
     def execute_query(self, query):
-        return self.connection_string.execute(query).fetchdf()
+        try:
+            with duckdb.connect() as conn:
+                df = conn.execute(query).fetchdf()
+                return df
+        except Exception as e:
+            self.logger.error(f"Erro ao executar a query: {e}")
+            raise e
     
     

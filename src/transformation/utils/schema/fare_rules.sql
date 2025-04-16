@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
     fare_id::VARCHAR             AS id_tarifa,
     route_id::VARCHAR            AS id_linha,
     origin_id::VARCHAR           AS id_origem,

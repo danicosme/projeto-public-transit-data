@@ -2,9 +2,12 @@ import json
 import zipfile
 import io
 import os
-from os.path import abspath
 import tempfile
 import uuid
+
+from os.path import abspath
+
+from configuration.config import Config
 
 from utils.logger import LoggingService
 from utils.s3 import S3Service
@@ -45,7 +48,7 @@ def lambda_handler(event, context):
                         FileManipulator().write_temp_file(file_name, zip_file, txt_path)
 
                         sql_path = abspath(
-                            f"src/transformation/table_utils/schema/{file_name.replace('.txt', '.sql')}"
+                            f"src/transformation/utils/schema/{file_name.replace('.txt', '.sql')}"
                         )
 
                         # Formata e lê a query SQL
@@ -61,7 +64,7 @@ def lambda_handler(event, context):
                             .file_name_mapping()
                             .get(file_name, file_name.replace(".txt", ""))
                         )
-                        bucket_processed = "public-transit-data-processed"
+                        bucket_processed = Config.BUCKET_NAME_PROCESSED
                         object_name = (
                             f"{new_file_name}/{extraction_date}/{uuid.uuid4()}.parquet"
                         )
@@ -76,7 +79,7 @@ def lambda_handler(event, context):
                         )
 
     except Exception as e:
-        print(f"Erro ao processar o evento: {e}")
+        logger.error(f"Erro ao processar o evento: {e}")
         return {"statusCode": 500, "body": json.dumps({"error": str(e)})}
 
 

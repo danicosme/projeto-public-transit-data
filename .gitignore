@@ -19,4 +19,5 @@ ipython_config.py
 [Ss]cripts
 pyvenv.cfg
 .venv
+*.env
 pip-selfcheck.json

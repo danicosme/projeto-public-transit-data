@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
     shape_id::VARCHAR            AS id_trajeto,
     shape_pt_lat::DOUBLE         AS latitude,
     shape_pt_lon::DOUBLE         AS longitude,

@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
     trip_id::VARCHAR             AS id_viagem,
     start_time::VARCHAR          AS horario_inicio,
     end_time::VARCHAR            AS horario_fim,
